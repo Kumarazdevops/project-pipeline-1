@@ -2,10 +2,7 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_IMAGE = 'my_image:latest'
-    }
-
+    
     stages {
         stage('Checkout') {
             steps {
