@@ -7,7 +7,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch : 'main', url: 'https://github.com/Kumarazdevops/project-pipeline-1.git' 
-                bat 'docker login -u sravankumar0338 -p Kumar@1997'
             }
         }
 
