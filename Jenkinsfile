@@ -4,13 +4,14 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'my_image:latest'
+        DOCKERHUB_USERNAME = 'sravankumar0338'
+        DOCKERHUB_PASSWORD = 'Kumar@1997'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch : 'main', url: 'https://github.com/Kumarazdevops/project-pipeline-1.git' 
-                bat 'docker login -u sravankumar0338 -p Kumar@1997'
+                git branch : 'main', url: 'https://github.com/Kumarazdevops/project-pipeline-1.git'
             }
         }
 
