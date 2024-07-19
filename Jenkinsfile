@@ -17,7 +17,7 @@
         stage('Build') {
             steps {
                 script {
-                    docker.build(DOCKER_IMAGE)
+                    //docker.build(DOCKER_IMAGE)
                     bat 'docker build -t my-docker-image .'
                 }
             }
