@@ -2,10 +2,9 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_IMAGE = 'my_image:latest'
-        DOCKERHUB_USERNAME = 'sravankumar0338'
-        DOCKERHUB_PASSWORD = 'Kumar@1997'
+        environment {
+            DOCKERHUB_USERNAME = 'sravankumar0338'
+            DOCKERHUB_PASSWORD = 'Kumar@1997'
     }
 
     stages {
