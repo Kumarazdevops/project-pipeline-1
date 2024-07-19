@@ -26,7 +26,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    bat 'docker volume create vol1'
+                    bat 'docker run -d --name myimage_1 -p 8020:80 my_image'
                 }
             }
         }
