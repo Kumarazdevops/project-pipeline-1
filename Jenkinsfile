@@ -18,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t my_image .'
+                    bat 'docker build -t my_vol .'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    bat 'docker run -d --name myimage_1 -p 8020:80 my_image'
+                    bat 'docker run -d --name myimage_1 -p 8020:80 my_vol'
                 }
             }
         }
