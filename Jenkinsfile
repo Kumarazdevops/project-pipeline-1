@@ -4,7 +4,7 @@
     environment {
         DOCKERHUB_USERNAME = 'sravankumar0338'
         DOCKERHUB_PASSWORD = 'Kumar@1997'
-        //DOCKER_IMAGE = 'my-docker-image'
+        DOCKER_IMAGE = 'my-docker-image'
     }
 
     stages {
@@ -17,7 +17,7 @@
         stage('Build') {
             steps {
                 script {
-                    //docker.build(DOCKER_IMAGE)
+                    docker.build(DOCKER_IMAGE)
                     bat 'docker build -t my-docker-image .'
                 }
             }
