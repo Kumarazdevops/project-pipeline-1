@@ -1,31 +1,43 @@
-
-pipeline {
+ pipeline {
     agent any
 
-        environment {
-            DOCKERHUB_USERNAME = 'sravankumar0338'
-            DOCKERHUB_PASSWORD = 'Kumar@1997'
+    environment {
+        DOCKERHUB_USERNAME = 'sravankumar0338'
+        DOCKERHUB_PASSWORD = 'Kumar@1997'
+        DOCKER_IMAGE = 'my-docker-image'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch : 'main', url: 'https://github.com/Kumarazdevops/project-pipeline-1.git'
+                git 'https://github.com/your-repo/your-project.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
                 script {
-                    bat 'docker build -t my_vol  .'
+                    docker.build(DOCKER_IMAGE)
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
                 script {
-                    bat 'docker run -d --name myimage_1 -p 8020:80 my_vol'
+                    docker.image(DOCKER_IMAGE).inside {
+                        sh 'make test'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                        docker.image(DOCKER_IMAGE).push('latest')
+                    }
                 }
             }
         }
