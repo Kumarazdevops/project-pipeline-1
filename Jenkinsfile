@@ -10,7 +10,7 @@
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/your-project.git'
+                git 'https://github.com/Kumarazdevops/project-pipeline-1.git'
             }
         }
 
