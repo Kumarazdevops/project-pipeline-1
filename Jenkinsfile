@@ -4,7 +4,7 @@
     environment {
         DOCKERHUB_USERNAME = 'sravankumar0338'
         DOCKERHUB_PASSWORD = 'Kumar@1997'
-        DOCKER_IMAGE = 'my-docker-image'
+        //DOCKER_IMAGE = 'my-docker-image'
     }
 
     stages {
