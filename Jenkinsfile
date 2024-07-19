@@ -10,7 +10,7 @@
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Kumarazdevops/project-pipeline-1.git'
+                git branch : 'main', url: 'https://github.com/Kumarazdevops/project-pipeline-1.git'
             }
         }
 
